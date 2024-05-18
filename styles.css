@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.icon-label-container {
+    display: flex;
+    flex-direction: row; /* Default layout for icons and labels */
+    align-items: center;
+    margin-right: 10px; /* Space between the label/icon container and the slider */
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px; /* Space between icon and label */
+    transition: box-shadow 0.5s ease; /* Smooth transition for shadow effects */
+}
+
+.slider {
+    flex-grow: 1;
+    margin: 0 10px;
+    max-width: 80%; /* Limits maximum width to prevent overly long sliders */
+}
+
+.label {
+    min-width: 130px;
+    text-align: center;
+}
+
+input[type="range"] {
+    background-color: #555;
+    border: none;
+    height: 8px;
+    border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb, input[type="range"]::-moz-range-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .control-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon-label-container {
+        width: 100%; /* Full width to manage space */
+        justify-content: center; /* Center the items horizontally */
+    }
+
+    .slider {
+        width: 100%; /* Full width for better touch interaction */
+        margin: 10px 0; /* Adds spacing above and below the slider */
+    }
+}
+
+@media (min-width: 769px) {
+    .control-group {
+        flex-direction: row;
+        justify-content: space-between; /* Spread elements evenly */
+    }
+
+    .icon-label-container {
+        flex-direction: row; /* Keep icon and label in a row */
+        justify-content: flex-start; /* Align items to the start */
+    }
+
+    .label {
+        margin-left: 10px; /* Space between slider and label */
+    }
+}
+
+.mic-muted {
+    animation: pulseBlue 2s infinite; /* Pulsing effect for muted microphone */
+}
+
+.mic-unmuted {
+    box-shadow: 0 0 15px red; /* Constant glow for unmuted microphone */
+}
+
+@keyframes pulseBlue {
+    0% {
+        box-shadow: 0 0 0px transparent;
+    }
+    50% {
+        box-shadow: 0 0 15px 5px blue; /* Mid pulse with maximum glow */
+    }
+    100% {
+        box-shadow: 0 0 0px transparent;
+    }
+}

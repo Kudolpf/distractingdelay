@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distracting Delay Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <h1>Live Audio Playback with Delay</h1>
+    <div class="control-group">
+        <div class="icon-label-container">
+            <div id="micButton" title="Mute Microphone" class="icon">
+                <img id="micOn" src="icons/mic_on.svg" style="display: none;">
+                <img id="micOff" src="icons/mic_off.svg" style="display: none;">
+            </div>
+            <span id="delayValue" class="label">Delay: 0 ms</span>
+        </div>
+        <input type="range" id="delaySlider" class="slider" min="0" max="2000" step="10" value="200">
+    </div>
+    <div class="control-group">
+        <div class="icon-label-container">
+            <div id="volumeButton" class="icon" title="Unmute Speaker" style="cursor: pointer;">
+                <img id="volumeIcon" src="icons/volume_high.svg">
+            </div>
+            <span id="volumeValue" class="label">Volume: 70%</span>
+        </div>
+        <input type="range" id="volumeSlider" class="slider" min="0" max="100" step="1" value="70">
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
